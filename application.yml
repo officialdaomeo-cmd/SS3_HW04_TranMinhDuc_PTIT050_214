@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: restaurant-service # [FIX] Đổi tên thành kebab-case nhất quán với order-service
+
+server:
+  port: 8081 # Port có thể đặt là 0 để chạy random port khi scale nhiều instance trên cùng 1 máy
+
+eureka:
+  client:
+    # [FIX] Khai báo tường minh để dễ dàng khi đọc code
+    register-with-eureka: true 
+    fetch-registry: true
+    service-url:
+      # [FIX] Bổ sung dấu / vào cuối đường dẫn
+      defaultZone: http://eureka-server:8761/eureka/
